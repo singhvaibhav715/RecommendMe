@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>RECOMMEND ME</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'RecommendMe/style/search.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+
+.typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 5.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 32% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    /*50% { border-color: orange; }*/
+  }
+
+</style>
+
+<body style="background-image: url({% static 'RecommendMe/image/background.jpg' %});background-repeat: no-repeat;background-size: cover;">
+
+  <nav class="navbar navbar-inverse"> 
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" style="color: red" href="/">RecommendMe</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/about_us">About Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+ <br><br> 
+
+ <center>
+   
+    <div class="typewriter" style="margin-top:150px; ">
+        <h1 style="font-size:50px"><span style="color: orangered;">Recomm</span><span style="color:white;">end</span><span style="color: green;">Me</span></h1>
+      </div>
+    <form class="form-inline" action="/option" method="GET">
+      <input class="form-control mr-sm-2" name='search'  type="text" placeholder="Enter Movie Name" style="height: 70px;width:400px;margin-top:50px; font-size:20px;">
+      <button class="btn btn-primary w3-hover-red" style="height: 70px;width:100px;margin-top:50px; font-size:20px;">Search</button>
+    </form>
+  </center>
+
+</body>
+</html> 
